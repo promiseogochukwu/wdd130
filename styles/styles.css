@@ -26,6 +26,58 @@ p {
     padding: 0;
 }
 
+nav {
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+main {
+    max-width: 840px;
+}
+
+h1 {
+    color: #333;
+}
+
+main img {
+    width: 150px;
+    height: auto;
+    border: 1px solid #333;
+    padding: 2px;
+    box-shadow: 0 0 20px gray;
+}
+
+aside {
+    width: 20rem;
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0 / 0.2);
+    padding: 1rem;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+}
+
+aside img {
+    width: 200px;
+    height: auto;
+}
+
+p {
+    padding: 0;
+}
+
+footer {
+    margin-top: 15px;
+    border-top: 1px solid #000;
+    text-align: center;
+}
+
 footer {
     margin-top: 15px;
     border-top: 1px solid #000;
