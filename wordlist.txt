@@ -1,0 +1,144 @@
+```python
+# Enhancement:
+# Added a password improvement suggestion feature. After checking a
+# password, the program gives the user advice about how to make a
+# weak password stronger.
+
+
+LOWER = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l",
+         "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w",
+         "x", "y", "z"]
+
+UPPER = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
+         "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W",
+         "X", "Y", "Z"]
+
+DIGITS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+SPECIAL = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_",
+           "=", "+", "[", "]", "{", "}", "|", ";", ":", "'", "\"",
+           ",", ".", "<", ">", "?", "/", "\\", "`", "~"]
+
+
+def word_in_file(word, filename, case_sensitive=False):
+    """Check whether a word is contained in a file."""
+
+    with open(filename, "r", encoding="utf-8") as file:
+
+        for line in file:
+            file_word = line.strip()
+
+            if case_sensitive:
+                if word == file_word:
+                    return True
+            else:
+                if word.lower() == file_word.lower():
+                    return True
+
+    return False
+
+
+def word_has_character(word, character_list):
+    """Check whether a word contains a character from a character list."""
+
+    for character in word:
+        if character in character_list:
+            return True
+
+    return False
+
+
+def word_complexity(word):
+    """Calculate the complexity of a word."""
+
+    complexity = 0
+
+    if word_has_character(word, LOWER):
+        complexity += 1
+
+    if word_has_character(word, UPPER):
+        complexity += 1
+
+    if word_has_character(word, DIGITS):
+        complexity += 1
+
+    if word_has_character(word, SPECIAL):
+        complexity += 1
+
+    return complexity
+
+
+def password_strength(password, min_length=10, strong_length=16):
+    """Calculate and return the strength of a password."""
+
+    # Check if the password is a dictionary word.
+    if word_in_file(password, "wordlist.txt"):
+        print("Password is a dictionary word and is not secure.")
+        return 0
+
+    # Check if the password is a commonly used password.
+    if word_in_file(password, "toppasswords.txt", True):
+        print("Password is a commonly used password and is not secure.")
+        return 0
+
+    # Check if the password is too short.
+    if len(password) < min_length:
+        print("Password is too short and is not secure.")
+        return 1
+
+    # Check if the password is long enough to be considered strong.
+    if len(password) >= strong_length:
+        print("Password is long, length trumps complexity this is a good password.")
+        return 5
+
+    # Calculate the password strength based on complexity.
+    complexity = word_complexity(password)
+    strength = 1 + complexity
+
+    return strength
+
+
+def password_suggestion(password, strength):
+    """Give the user a suggestion for improving their password."""
+
+    if strength == 0:
+        print("Suggestion: Choose a password that is not a common word or commonly used password.")
+
+    elif strength == 1:
+        print("Suggestion: Make your password at least 10 characters long.")
+
+    elif strength == 2:
+        print("Suggestion: Add uppercase letters, numbers, or special characters.")
+
+    elif strength == 3:
+        print("Suggestion: Add another type of character to make your password stronger.")
+
+    elif strength == 4:
+        print("Suggestion: Consider making your password at least 16 characters long.")
+
+    else:
+        print("Great job! Your password is very strong.")
+
+
+def main():
+    """Run the password strength checker."""
+
+    password = ""
+
+    while password.lower() != "q":
+        password = input("Enter a password to test or Q to quit: ")
+
+        if password.lower() != "q":
+            strength = password_strength(password)
+
+            print(f"Password strength: {strength}")
+
+            # Enhancement: Give the user advice about their password.
+            password_suggestion(password, strength)
+
+            print()
+
+
+if __name__ == "__main__":
+    main()
+```
