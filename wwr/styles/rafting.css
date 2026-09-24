@@ -118,8 +118,8 @@ header nav a {
 
 /* Sections */
 section {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--accent2-color);
 }
 
 section h2 {
