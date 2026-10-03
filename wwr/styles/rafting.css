@@ -154,3 +154,100 @@ footer p {
     height: 32px;
     margin: 0 4px;
 }
+
+/* HEADER - CSS Grid */
+header {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    /* Logo | Nav */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+/* NAV - CSS Flex */
+header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav ul {
+    display: flex;
+    /* Flex requirement */
+    list-style: none;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+header nav a {
+    display: block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-right: 1px solid #ccc;
+}
+
+/* HISTORY - Grid 2fr 1fr 2fr = wireframe */
+.history-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+
+.history-grid img {
+    width: 100%;
+    height: auto;
+}
+
+/* ADVENTURES - 5 columns */
+.adventure-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.adventure-gallery figure {
+    margin: 0;
+}
+
+.adventure-gallery img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.adventure-gallery figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* FOOTER - Grid + social to right */
+footer {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.socialmedia {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+}
