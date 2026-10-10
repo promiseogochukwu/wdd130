@@ -205,3 +205,122 @@ footer p {
     height: 32px;
     margin: 0 4px;
 }
+
+/* Contact page */
+.contact-intro {
+    text-align: center;
+    padding: 1rem;
+}
+
+.company-info,
+.employee-profiles,
+.contact-form-section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.company-info address {
+    font-style: normal;
+    line-height: 1.8;
+}
+
+.company-info iframe {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem auto;
+    border: 1px solid #264653;
+}
+
+.employee-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.employee-profiles h2 {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.employee-profiles figure {
+    flex: 1 1 200px;
+    max-width: 260px;
+    margin: 0;
+    text-align: center;
+}
+
+.employee-profiles img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #264653;
+    padding: 4px;
+    box-shadow: 0 2px 6px #999;
+}
+
+.employee-profiles figcaption {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.contact-form-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.form-item input,
+.form-item textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #264653;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.contact-form-section fieldset {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid #264653;
+}
+
+.contact-form-section fieldset label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.newsletter {
+    margin: 1rem 0;
+}
+
+.contact-form-section button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #1a3c6e;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form-section button:hover {
+    background-color: #264653;
+}
+
+.contact-form-section button:focus-visible,
+.contact-form-section input:focus-visible,
+.contact-form-section textarea:focus-visible {
+    outline: 3px solid #e9c46a;
+    outline-offset: 3px;
+}
