@@ -22,6 +22,7 @@ header,
 main,
 footer {
     width: 840px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -323,4 +324,295 @@ footer p {
 .contact-form-section textarea:focus-visible {
     outline: 3px solid #e9c46a;
     outline-offset: 3px;
+}
+
+/* HOME PAGE */
+.home-hero {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.home-hero > img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.home-hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    background-color: rgba(26, 60, 110, 0.94);
+    color: #fff;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
+}
+
+.home-newsletter {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+}
+
+.home-newsletter > p {
+    text-align: center;
+}
+
+.home-newsletter form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+
+.home-form-field {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.home-form-field input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--accent1-color);
+    border-radius: 4px;
+    font: inherit;
+}
+
+.home-newsletter button,
+.home-cta-button,
+.trips-cta-button {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.home-newsletter button:hover,
+.home-cta-button:hover,
+.trips-cta-button:hover {
+    background-color: var(--accent1-color);
+}
+
+.home-offerings {
+    padding-bottom: 1.5rem;
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.home-grid article {
+    margin: 0;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.home-grid article h3 {
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+.home-grid article p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.home-grid img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.home-callout {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.home-callout p {
+    margin: 1rem;
+}
+
+/* TRIPS PAGE */
+.trips-intro {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.trips-intro h1 {
+    margin-bottom: 1rem;
+}
+
+.trips-intro p,
+.trips-contact p {
+    line-height: 1.6;
+}
+
+.trips-cta-button {
+    margin: 1rem;
+}
+
+.trip-list {
+    padding-bottom: 1.5rem;
+}
+
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    padding: 1.5rem;
+}
+
+.trip-card {
+    margin: 0;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.trip-card img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.trip-card h3 {
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+.trip-card p {
+    margin: 0.75rem 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.trip-comparison {
+    padding: 1rem;
+}
+
+.trip-table-wrapper {
+    overflow-x: auto;
+    margin: 1rem;
+}
+
+.trip-comparison table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.trip-comparison th,
+.trip-comparison td {
+    padding: 0.8rem;
+    border: 1px solid var(--accent1-color);
+    text-align: left;
+}
+
+.trip-comparison thead {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.trip-comparison tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.trips-contact {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 760px) {
+    header {
+        grid-template-columns: 80px minmax(0, 1fr);
+        padding: 0.5rem;
+    }
+
+    header img {
+        width: 70px;
+    }
+
+    header nav {
+        margin: 0;
+        padding: 0;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+    }
+
+    header nav a {
+        padding: 0.6rem;
+    }
+
+    .home-hero > img {
+        height: 300px;
+    }
+
+    .home-grid,
+    .trip-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-grid img,
+    .trip-card img {
+        height: 220px;
+    }
+
+    .history-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .adventure-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    footer .socialmedia {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 420px) {
+    header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    .adventure-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
 }
